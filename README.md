@@ -8,7 +8,7 @@ This notebook estimates how many hours per day a tidal-flat pixel is under water
 | --- | --- |
 | `Tide_inundation_duration.ipynb` | Run settings, model functions, decadal sea-level values, 86 tile-specific accretion rates and the tile loop |
 | `requirements.txt` | Versions of the Python packages used to run the example |
-| `data/dem/{id}_dem.tif` | 86 model-input DEM tiles, numbered 1–86. These resampled rasters contain elevations in metres. Raster spacing is encoded in each GeoTIFF. Tile 6, for example, has a spacing of approximately 0.000897° on both axes. The original high-resolution DEM is a separate study product. |
+| `data/dem/{id}_dem.tif` | 86 model-input DEM tiles, numbered 1–86. These resampled rasters contain elevations in metres. Raster spacing is encoded in each GeoTIFF. |
 | `tide_models/TPXO10_atlas_v2/` | External tide-model files to install separately. Use the TPXO10-atlas-v2 **NetCDF** distribution, including the grid and elevation harmonic constituents. |
 
 TPXO heights are relative to mean sea level. Supply DEM elevations on a compatible vertical reference. The coordinate transformation in the notebook converts horizontal positions to WGS 84. It applies no vertical-datum offset. Obtain the model through the provider's registration process and retain the directory structure expected by eo-tides. [TPXO10-atlas access](https://www.tpxo.net/global/tpxo10-atlas) · [eo-tides model setup](https://geoscienceaustralia.github.io/eo-tides/setup/)
