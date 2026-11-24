@@ -63,9 +63,3 @@ For the three paired projections in the study, set `(SSP, k)` to `("SSP1-2.6", 0
 | `cache/tide_cache_{id}.nc` | Hourly tide array, coordinates, valid grid mask and run settings used by later runs. |
 
 The diagnostic map and optional tide-grid export are created when tides are calculated. Set `USE_TIDE_CACHE = False` to regenerate them. Check the coverage map if interpolation reports missing tide heights. The notebook keeps an hourly Boolean mask in memory, requiring approximately `number of hours × rows × columns` bytes for this array alone. Process tiles sequentially.
-
-## Scope of verification
-
-Using the same tile and tide series, the original GitHub notebook and this English version gave identical values for all 160 valid pixels in the example. Freshly predicted tides also matched the archived tile-6 tide cache. This verifies the published code path for one tile. A separate historical inundation raster for the same tile and scenario has a mean of 22.28937 h/day. Subtracting an additional 1.0 m from tile-6 elevation reproduces that raster's 160 values. The provenance and intended use of this additional offset require confirmation before the example can be identified with the manuscript production run.
-
-The notebook produces the inundation-duration rasters. DEM construction, habitat thresholding, national mosaicking, figure statistics and publication graphics are separate analyses. [Original GitHub notebook](https://github.com/Chunpchen/TideInundationDurationModelling/blob/1fd8e8ae192bd33fce4a420a80433d76d9c89a3f/Tide_inundation_duration.ipynb)
